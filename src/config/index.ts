@@ -2,6 +2,6 @@ import { config } from 'dotenv';
 
 config();
 
-const { PORT, NODE_ENV, DB_URL } = process.env;
+const { PORT, NODE_ENV, DB_URL, BASE_URL, SWAGGER_TITLE, SWAGGER_DESCRIPTION, SWAGGER_SERVER_DESCRIPTION } = process.env;
 
-export const Config = { PORT, NODE_ENV, DB_URL };
+export const Config = { PORT, NODE_ENV, DB_URL, BASE_URL, SWAGGER_TITLE, SWAGGER_DESCRIPTION, SWAGGER_SERVER_DESCRIPTION };

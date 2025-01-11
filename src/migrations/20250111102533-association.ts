@@ -2,7 +2,7 @@ import { QueryInterface, Sequelize, DataTypes } from 'sequelize';
 
 export default {
   async up(queryInterface: QueryInterface, _sequelize: Sequelize) {
-    await queryInterface.createTable('UserProject', {
+    await queryInterface.createTable('projectassociation', {
       user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -34,7 +34,7 @@ export default {
     });
   },
   async down(queryInterface: QueryInterface, _sequelize: Sequelize) {
-    await queryInterface.dropTable('UserProject');
+    await queryInterface.dropTable('projectassociation');
     await queryInterface.removeColumn('tasks', 'project_id');
   },
 };

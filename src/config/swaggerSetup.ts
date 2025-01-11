@@ -18,6 +18,20 @@ const swaggerOptions = {
         description: Config.SWAGGER_SERVER_DESCRIPTION,
       },
     ],
+    components: {
+      securitySchemes: {
+        cookieAuth: {
+          type: 'apiKey',
+          in: 'cookie',
+          name: 'jwt', // Make sure this matches the name of the cookie you are using for authentication
+        },
+      },
+    },
+    security: [
+      {
+        cookieAuth: [],
+      },
+    ],
   },
   apis: ['./src/routes/*.ts', './src/app.ts'],
 };

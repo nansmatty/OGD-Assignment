@@ -5,6 +5,11 @@ import { ErrorMiddleware } from './middlewares/errorMiddleware';
 import logger from './config/logger';
 import { swaggerSetup } from './config/swaggerSetup';
 
+import userRoutes from './routes/userRoutes';
+import authRoutes from './routes/authRoutes';
+import projectRoutes from './routes/projectRoutes';
+import taskRoutes from './routes/taskRoutes';
+
 const app: Application = express();
 
 app.use(express.json({ limit: '50mb' }));
@@ -37,6 +42,10 @@ app.get('/api/v1/health-check', (_req: Request, res: Response, next: NextFunctio
 });
 
 // Routes Declaration
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/projects', projectRoutes);
+app.use('/api/v1/tasks', taskRoutes);
 
 // Middleware to handle errors
 app.use(ErrorMiddleware);

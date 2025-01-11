@@ -26,7 +26,7 @@ class TaskModel extends Model<TaskAttributes, TaskCreationAttributes> implements
 TaskModel.init(
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
@@ -36,7 +36,7 @@ TaskModel.init(
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     status: {
       type: DataTypes.ENUM('TODO', 'IN-PROGRESS', 'DONE'),
@@ -44,7 +44,7 @@ TaskModel.init(
       defaultValue: 'TODO',
     },
     project_id: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },

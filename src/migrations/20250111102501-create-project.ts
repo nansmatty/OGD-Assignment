@@ -16,6 +16,14 @@ export default {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'users',
+          key: 'id',
+        },
+      },
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,

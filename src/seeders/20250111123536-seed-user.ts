@@ -23,12 +23,26 @@ export default {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: 'John Smith',
+        email: 'john.smith@example.com',
+        password: hashedPassword2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: 'Jane Doe',
+        email: 'jane.doe@example.com',
+        password: hashedPassword1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 
   async down(queryInterface: QueryInterface, _Sequelize: Sequelize) {
     await queryInterface.bulkDelete('users', {
-      email: ['john.doe@example.com', 'jane.smith@example.com'],
+      email: ['john.doe@example.com', 'jane.smith@example.com', 'john.smith@example.com', 'jane.doe@example.com'],
     });
   },
 };

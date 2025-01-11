@@ -18,8 +18,7 @@ const dbConnect = async () => {
     logger.info('Connection Established Successfully');
   } catch (error) {
     logger.error('Unable to connect to the database:', error);
-  } finally {
-    await pgSequelize.close();
+    process.exit(1);
   }
 };
 

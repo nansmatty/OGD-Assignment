@@ -17,6 +17,8 @@ swaggerSetup(app);
  * @swagger
  * /api/v1/health-check:
  *   get:
+ *     tags:
+ *      - Health Check
  *     description: Health check endpoint
  *     responses:
  *       200:

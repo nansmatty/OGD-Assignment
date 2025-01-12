@@ -78,7 +78,7 @@ http://localhost:6001/api-docs
 
 ## Routes
 
-## Health-Check
+### Health-Check
 
 - `GET /api/v1/health-check` : Get the API health check
 

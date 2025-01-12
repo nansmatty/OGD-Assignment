@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import CatchAsyncError from '../utils/catchAsyncError';
-import { Project } from '../models';
+import { Project, ProjectAssociation } from '../models';
 import ErrorHandler from '../utils/errorHandler';
 import logger from '../config/logger';
 
@@ -51,6 +51,8 @@ export const createProject = CatchAsyncError(async (req: Request, res: Response,
     if (!project) {
       return next(new ErrorHandler('Something went wrong while creating project. Please try after sometime', 400));
     }
+
+    await ProjectAssociation.create({ user_id: res.locals.user.id, project_id: project.id });
 
     return res.status(201).json(project);
   } catch (error) {

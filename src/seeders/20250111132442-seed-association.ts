@@ -25,4 +25,8 @@ export default {
       },
     ]);
   },
+
+  // async down(queryInterface: QueryInterface, _sequelize: Sequelize) {
+  //   await queryInterface.bulkDelete('projectassociation', {});
+  // },
 };

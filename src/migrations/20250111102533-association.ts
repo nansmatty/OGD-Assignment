@@ -20,21 +20,8 @@ export default {
         onDelete: 'CASCADE',
       },
     });
-
-    await queryInterface.addConstraint('tasks', {
-      fields: ['project_id'],
-      type: 'foreign key',
-      name: 'tasks_project_id_fkey',
-      references: {
-        table: 'projects',
-        field: 'id',
-      },
-      onDelete: 'CASCADE',
-      onUpdate: 'CASCADE',
-    });
   },
   async down(queryInterface: QueryInterface, _sequelize: Sequelize) {
     await queryInterface.dropTable('projectassociation');
-    await queryInterface.removeColumn('tasks', 'project_id');
   },
 };

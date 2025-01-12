@@ -9,6 +9,7 @@ import userRoutes from './routes/userRoutes';
 import authRoutes from './routes/authRoutes';
 import projectRoutes from './routes/projectRoutes';
 import taskRoutes from './routes/taskRoutes';
+import projectAssociationRoutes from './routes/projectassociationRoutes';
 
 const app: Application = express();
 
@@ -46,6 +47,7 @@ app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/projects', projectRoutes);
 app.use('/api/v1/tasks', taskRoutes);
+app.use('/api/v1/associations', projectAssociationRoutes);
 
 // Middleware to handle errors
 app.use(ErrorMiddleware);

@@ -32,6 +32,7 @@ export const generateJwtToken = (user: UserAttributes, statusCode: number, res: 
       status: 'success',
       message: 'User Login Successfully',
       data: {
+        jwt: token,
         user: {
           name: user.name,
           email: user.email,

@@ -25,7 +25,7 @@ export const userRegister = CatchAsyncError(async (req: Request, res: Response, 
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const createUser = await User.create({ name, email, password: hashedPassword, createdAt: new Date(), updatedAt: new Date() });
+    const createUser = await User.create({ name, email, password: hashedPassword });
 
     if (!createUser) {
       return next(new ErrorHandler('Something went wrong while resgistering user', 500));

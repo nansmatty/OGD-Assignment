@@ -44,6 +44,8 @@ ProjectModel.init(
         model: User,
         key: 'id',
       },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
     },
   },
   {

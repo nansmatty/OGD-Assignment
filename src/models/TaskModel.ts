@@ -1,5 +1,6 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import { pgSequelize } from '../config/dbConnect';
+import { Project } from './ProjectModel';
 
 interface TaskAttributes {
   id: number;
@@ -46,6 +47,12 @@ TaskModel.init(
     project_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: Project,
+        key: 'id',
+      },
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
     },
   },
   {
